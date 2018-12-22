@@ -35,7 +35,7 @@ def plot_cluster(data, mu, colors, ax):
 def plot(data, mu, mu_old, out_dir):
     """plot."""
     colors = ['red', 'blue', 'green']
-    fig = plt.figure()
+    fig = plt.figure(figsize=(20,10))
     ax1 = fig.add_subplot(1, 2, 1)
     plot_cluster(data, mu_old, colors, ax1)
     ax1.scatter(mu_old[:, 0], mu_old[:, 1],

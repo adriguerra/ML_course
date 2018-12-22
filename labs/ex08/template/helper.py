@@ -40,8 +40,9 @@ def build_distance_matrix(data, mu):
     row of the matrix represents the data point,
     column of the matrix represents the k-th cluster.
     """
-    # ***************************************************
-    # INSERT YOUR CODE HERE
-    # TODO: build distance matrix
-    # ***************************************************
-    raise NotImplementedError
+    distance_list = []
+    num_cluster, _ = mu.shape
+    for k_th in range(num_cluster):
+        sum_squares = np.sum(np.square(data - mu[k_th, :]), axis=1)
+        distance_list.append(sum_squares)
+    return np.matrix(distance_list).T
